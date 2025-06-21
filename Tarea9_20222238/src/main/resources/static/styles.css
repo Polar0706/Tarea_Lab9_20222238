@@ -35,3 +35,80 @@ h1 {
     border-radius: 4px;
     border: 1px solid #a3c9e2;
 }
+
+#peces-y-contadores {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.pez-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e6f7ff;
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.pez-img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+#btn-nemo, #btn-dory {
+    margin-top: 10px;
+    padding: 6px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #4fc3f7;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#btn-nemo:hover { background: #ff9800; }
+
+#btn-dory:hover { background: #1976d2; }
+
+.burbuja {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    top: 0;
+    z-index: 10;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border: 2px solid #fff;
+    transition: box-shadow 0.2s;
+}
+.burbuja.nemo {
+    background: orange;
+    border-color: #ff9800;
+}
+.burbuja.dory {
+    background: #1976d2;
+    border-color: #64b5f6;
+}
+.burbuja.dragging {
+    opacity: 0.7;
+    box-shadow: 0 0 16px #333;
+}
+#burbujas-container {
+    position: fixed;
+    left: 0; right: 0;
+    top: 0;
+    height: 80px;
+    pointer-events: none;
+    z-index: 20;
+}
+#burbujas-container .burbuja {
+    pointer-events: auto;
+}
+.pez-box.drop-hover {
+    box-shadow: 0 0 16px 4px #81c784;
+}
